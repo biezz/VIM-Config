@@ -1,0 +1,50 @@
+  1 set nocompatible              " required
+  2 filetype off                  " required
+  3 
+  4 " set the runtime path to include Vundle and initialize
+  5 set rtp+=~/.vim/bundle/Vundle.vim
+  6 call vundle#begin()
+  7 
+  8 " alternatively, pass a path where Vundle should install plugins
+  9 "call vundle#begin('~/some/path/here')
+ 10 
+ 11 " let Vundle manage Vundle, required
+ 12 Plugin 'gmarik/Vundle.vim'
+ 13 
+ 14 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+ 15 
+ 16 " All of your Plugins must be added before the following line
+ 17 call vundle#end()            " required
+ 18 filetype plugin indent on    " required
+ 19 Bundle 'Valloric/YouCompleteMe'
+ 20 
+ 21 let g:ycm_autoclose_preview_window_after_completion=1
+ 22 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+ 23 
+ 24 Bundle 'scrooloose/nerdtree'
+ 25 map <F2> :NERDTreeToggle<CR>
+ 26 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+ 27 
+ 28 set foldmethod=indent
+ 29 set foldlevel=99
+ 30 nnoremap <space> za
+ 31 Plugin 'tmhedberg/SimpylFold'
+ 32 
+ 33 Plugin 'vim-scripts/indentpython.vim'
+ 34 
+ 35 Plugin 'scrooloose/syntastic'
+ 36 Plugin 'nvie/vim-flake8'
+ 37 let python_highlight_all=1
+ 38 syntax on
+ 39 
+ 40 Plugin 'jnurmine/Zenburn'
+ 41 Plugin 'altercation/vim-colors-solarized'
+ 42 :colorscheme darkblue
+ 43 
+ 44 set splitbelow
+ 45 set splitright
+ 46 "split navigations
+ 47 nnoremap <C-J> <C-W><C-J>
+ 48 nnoremap <C-K> <C-W><C-K>
+ 49 nnoremap <C-L> <C-W><C-L>
+ 50 nnoremap <C-H> <C-W><C-H>
